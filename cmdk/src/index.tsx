@@ -1034,7 +1034,7 @@ function useValue(
 
         if (typeof part === 'object' && 'current' in part) {
           if (part.current) {
-            return part.current.textContent?.trim()
+            return part.current.textContent?.trim()?.replace(/[\W_]+/g,"")
           }
           return valueRef.current
         }
